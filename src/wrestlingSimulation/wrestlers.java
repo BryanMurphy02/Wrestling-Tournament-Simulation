@@ -3,13 +3,13 @@ package wrestlingSimulation;
 public class wrestlers {
 	
 	private String name;
-	private double strength;
+	private double strength;//out of 10.0
 	private int id;
-	private double weight;
+	private int weight;
 
 
 
-	public wrestlers(String name, double strength, int id, double weight) {
+	public wrestlers(String name, double strength, int id, int weight) {
 		this.name = name;
 		this.strength = strength;
 		this.id = id;
@@ -44,7 +44,11 @@ public class wrestlers {
 		this.id = id;
 	}
 	
-	void setWeight(double weight) {
+	void setWeight(int weight) {
 		this.weight = weight;
+	}
+
+	public String toString(){
+		return "Wrestler: " + this.name + "\nStrength: " + this.strength + "\nID: " + this.id + "\nWeight Class: " + this.weight + "\n\n";
 	}
 }

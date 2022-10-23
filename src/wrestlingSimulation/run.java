@@ -6,9 +6,11 @@ package wrestlingSimulation;
 
 public class run {
     public static void main(String args[]){
-        init init = new init();
 
-        // System.out.println(init.allNames);
-        System.out.println("Test");
+        //making all the wrestlers
+        init init = new init();
+        init.initialize();
+
+        // System.out.print(init.wresterDatabase);
     }
 }
