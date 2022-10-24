@@ -11,6 +11,8 @@ public class run {
         init init = new init();
         init.initialize();
 
+        
+        // System.out.print(init.wrestlerDatabase);
         // System.out.print(init.teamsDatabase);
     }
 }
