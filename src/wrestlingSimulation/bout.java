@@ -6,6 +6,9 @@ package wrestlingSimulation;
 
 public class bout{
 
+    chance chance = new chance();
+    
+
     //runs a bout between two wrestlers and returns the winnder
     public wrestlers runBout(wrestlers wrestler1, wrestlers wrestler2){
 
@@ -15,6 +18,8 @@ public class bout{
 
         return wrestler1;
     }
+
+    
 
 
 
