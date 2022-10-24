@@ -8,7 +8,8 @@ import java.util.Arrays;
 
 public class init {
 
-	ArrayList<wrestlers> wresterDatabase = new ArrayList<>();
+	ArrayList<wrestlers> wrestlerDatabase = new ArrayList<>();
+	ArrayList<teams> teamsDatabase = new ArrayList<>();
 
 	//size of allNames is 1605
 	ArrayList<String> allNames = new ArrayList<>(Arrays.asList("Aaran", "Aaren", "Aarez", "Aarman", "Aaron", "Aaron-James", "Aarron", "Aaryan", "Aaryn", "Aayan", "Aazaan", "Abaan", "Abbas", "Abdallah", "Abdalroof", "Abdihakim", "Abdirahman", "Abdisalam", "Abdul", "Abdul-Aziz", "Abdulbasir", "Abdulkadir", "Abdulkarem", "Abdulkhader", "Abdullah", "Abdul-Majeed", "Abdulmalik", "Abdul-Rehman", "Abdur", "Abdurraheem", "Abdur-Rahman", "Abdur-Rehmaan", "Abel", "Abhinav", "Abhisumant", "Abid", "Abir", "Abraham", "Abu", "Abubakar", "Ace", "Adain", "Adam", "Adam-James", "Addison", "Addisson", "Adegbola", "Adegbolahan", "Aden", "Adenn", "Adie", "Adil", "Aditya", "Adnan", "Adrian", "Adrien", "Aedan", "Aedin", "Aedyn", "Aeron", "Afonso", "Ahmad", "Ahmed", "Ahmed-Aziz", "Ahoua", "Ahtasham", "Aiadan", "Aidan", "Aiden", "Aiden-Jack", "Aiden-Vee", "Aidian", "Aidy", "Ailin", "Aiman", "Ainsley", "Ainslie", "Airen", "Airidas", "Airlie", "AJ", "Ajay", "A-Jay", "Ajayraj", "Akan", "Akram", "Al", "Ala", "Alan", "Alanas", "Alasdair", "Alastair", "Alber", "Albert", "Albie", "Aldred", "Alec", "Aled", "Aleem", "Aleksandar", "Aleksander", "Aleksandr", "Aleksandrs", "Alekzander", "Alessandro", "Alessio", "Alex", "Alexander", "Alexei", "Alexx", "Alexzander", "Alf", "Alfee", "Alfie", "Alfred", "Alfy", "Alhaji", "Al-Hassan", "Ali", "Aliekber", "Alieu", "Alihaider", "Alisdair", "Alishan", "Alistair", "Alistar", "Alister", "Aliyaan", "Allan", "Allan-Laiton", "Allen",
@@ -20,7 +21,7 @@ public class init {
 	
 	ArrayList<Double> allStrength = new ArrayList<>(Arrays.asList(0.25, 0.5, 0.75,1.0, 1.25, 1.5, 1.75, 2.0, 2.25, 2.5, 2.75, 3.0, 3.25, 3.5, 3.75, 4.0, 4.25, 4.5, 4.75, 5.0, 5.5, 5.25, 5.75, 6.0, 6.25, 6.5, 6.75, 7.0, 7.25, 7.5, 7.75, 8.0, 8.25, 8.5, 8.75, 9.0, 9.25, 9.5, 9.75, 10.0));
 	ArrayList<Integer> weightClass = new ArrayList<>(Arrays.asList(115, 125, 134, 143, 154, 163, 174, 190, 203, 214, 276));
-
+	ArrayList<String> schoolNames = new ArrayList<>();
 
 	public int randomName(){
 		int max = 1605;
@@ -43,17 +44,47 @@ public class init {
 		return (int)(Math.random() * range);
 	}
 
+	public String makeSchools(){
+		String temp = allNames.get(randomName());
+		char temp2 = allNames.get(randomName()).charAt(0);
+		String temp3 = allNames.get(randomName());
+
+		if(temp.equals(temp3)){
+			temp3 = allNames.get(randomName());
+		}
+
+		return temp + " " + temp2 + ". " + temp3 + " School";
+	}
+
 	public void initialize(){
 
-		
-		for(int i = 0; i < 100; i++){
+		//making all the wrestlers
+		for(int i = 0; i < 192; i++){
 			String name = allNames.get(randomName());
 			double strength = allStrength.get(randomStrength());
 			int id = i + 1;
 			int weight = weightClass.get(randomWeight());
 
 			wrestlers newWrestler = new wrestlers(name, strength, id, weight);
-			wresterDatabase.add(newWrestler);
+			wrestlerDatabase.add(newWrestler);
+		}
+
+
+
+		//making the teams
+		for(int i = 0; i < 16; i++){
+			String school = makeSchools();
+			ArrayList<wrestlers> wrestlers = new ArrayList<>();
+			for(int k = 0; k < 192; k++){
+				if(k == 12 || k == 24 || k == 36 || k == 48 || k == 60 || k == 72 || k == 84 || k == 96 || k == 108 || k == 120 || k == 132 || k == 144 || k == 156 || k== 168 || k == 180 || k == 192){
+					teams newTeam = new teams(school, wrestlers);
+					teamsDatabase.add(newTeam);
+					wrestlers.clear();
+				}
+				wrestlers.add(wrestlerDatabase.get(k));
+			}
+
+			
 		}
 
 

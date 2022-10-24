@@ -1,7 +1,7 @@
 package wrestlingSimulation;
 
 //main class
-//run all the mathes here
+//run all the matches here
 //add time intervals between each match
 
 public class run {
@@ -11,6 +11,6 @@ public class run {
         init init = new init();
         init.initialize();
 
-        // System.out.print(init.wresterDatabase);
+        // System.out.print(init.teamsDatabase);
     }
 }
