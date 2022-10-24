@@ -9,6 +9,8 @@ public class chance {
     int[] chance2 = {0, 0, 1, 0, 0};
     //10%
     int[] chance3 = {0, 0, 0, 0, 1, 0, 0, 0, 0, 0};
+    //50%
+    int[] chance4 = {0, 1};
 
     //returns true if the one was picked from the array
     public boolean getChance(int x){
@@ -28,6 +30,13 @@ public class chance {
         }
         else if(x == 10){
             int temp = getRandom(chance3);
+            if(temp == 1){
+                return true;
+            }
+            return false;
+        }
+        else if(x == 50){
+            int temp = getRandom(chance4);
             if(temp == 1){
                 return true;
             }
