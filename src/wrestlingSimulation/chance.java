@@ -10,7 +10,7 @@ public class chance {
     //10%
     int[] chance3 = {0, 0, 0, 0, 1, 0, 0, 0, 0, 0};
 
-
+    //returns true if the one was picked from the array
     public boolean getChance(int x){
         if(x == 25){
             int temp = getRandom(chance1);
@@ -36,7 +36,7 @@ public class chance {
         return false;
     }
 
-
+    //picks a random index from the inputted array
     public int getRandom(int[] x){
         int temp = (int)(Math.random() * x.length);
         int num = x[temp];

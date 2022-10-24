@@ -6,6 +6,7 @@ package wrestlingSimulation;
 
 public class bout{
 
+    //call chance.getChance(int of either 25, 20, or 10)
     chance chance = new chance();
     
 
