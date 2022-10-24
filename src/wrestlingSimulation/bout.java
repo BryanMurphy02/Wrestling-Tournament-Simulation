@@ -14,6 +14,22 @@ public class bout{
     public wrestlers runBout(wrestlers wrestler1, wrestlers wrestler2){
 
         //there is a 10% chance that if a wrestler's strength is lower they can win
+        if(wrestler1.getStrength() > wrestler2.getStrength()){
+            if(chance.getChance(10) == true){
+                return wrestler2;
+            }
+            else{
+                return wrestler1;
+            }
+        }
+        else if(wrestler2.getStrength() > wrestler1.getStrength()){
+            if(chance.getChance(10) == true){
+                return wrestler1;
+            }
+            else{
+                return wrestler2;
+            }
+        }
 
 
 
