@@ -12,6 +12,7 @@ public class run {
         //making all the wrestlers
         init init = new init();
         bout bout = new bout();
+        match mathch = new match();
         init.initialize();
 
         
@@ -25,5 +26,10 @@ public class run {
         // System.out.println(temp.get(0) + "\n\n");
         // System.out.println(temp.get(1) + "\n\n");
         // System.out.println("Winner of the bout: \n" + bout.runBout(temp.get(0), temp.get(1)));
+
+        System.out.println("Before: \n\n\n\n" + init.teamsDatabase.get(0).getWrestlers());
+        teams temp = init.teamsDatabase.get(0);
+        ArrayList<wrestlers> temp2 = match.shuffleTeam(temp);
+        System.out.println("After: \n\n\n\n" + temp2);
     }
 }

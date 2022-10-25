@@ -1,5 +1,6 @@
 package wrestlingSimulation;
 import java.util.ArrayList;
+import java.util.Random;
 //12 wresters on the team
 // Team record(wins and losses)
 // Team Schedule
@@ -36,6 +37,8 @@ public class teams{
     public String toString(){
         return "School name: " + school + "\nWrestlers on the Team: " + wrestlers +"\n";
     }
+
+    
 
 
 

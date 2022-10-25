@@ -2,10 +2,25 @@ package wrestlingSimulation;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Random;
 
 public class match{
 
     Queue<wrestlers> line = new LinkedList<>();
+
+    public static ArrayList<wrestlers> shuffleTeam(teams x){
+        ArrayList<wrestlers> tempTeam = x.getWrestlers();
+        Random r = new Random();
+        int n = tempTeam.size();
+        for(int i = n-1; i > 0; i--){
+            int j = r.nextInt(i);
+            wrestlers temp = tempTeam.get(i);
+            tempTeam.set(i, tempTeam.get(j));
+            tempTeam.set(j, temp);
+        }
+        return tempTeam;
+    }
+    
 
     public void makeLine(teams team1, teams team2){
         // int temp = team1.getWrestlers().size();
