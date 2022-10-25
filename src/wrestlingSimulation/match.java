@@ -6,8 +6,11 @@ import java.util.Random;
 
 public class match{
 
-    Queue<wrestlers> line = new LinkedList<>();
+    //queues that represent the lines for wrestling waiting to participate in a bout
+    Queue<wrestlers> line1 = new LinkedList<>();
+    Queue<wrestlers> line2 = new LinkedList<>();
 
+    //method to shuffle the wrestlers in a team
     public static ArrayList<wrestlers> shuffleTeam(teams x){
         ArrayList<wrestlers> tempTeam = x.getWrestlers();
         Random r = new Random();
@@ -21,26 +24,27 @@ public class match{
         return tempTeam;
     }
     
-
+    //forms the queues for people waiting for a bout
     public void makeLine(teams team1, teams team2){
-        // int temp = team1.getWrestlers().size();
-        // for(int i = 0; i < temp; i++){
-        //     ArrayList<wrestlers> team1Wrestlers = team1.getWrestlers();
-        //     line.add(team1Wrestlers.get(i));
-        // }
+        //making line 1
+        ArrayList<wrestlers> temp1 = shuffleTeam(team1);
+        for(int i = 0; i < temp1.size(); i++){
+            line1.add(temp1.get(i));
+        }
 
-        // int temp2 = team2.getWrestlers().size();
-        // for(int i = 0; i < temp2; i++){
-        //     ArrayList<wrestlers> team2Wrestlers = team2.getWrestlers();
-        //     line.add(team2Wrestlers.get(i));
-        // }
-        
+        //making line 2
+        ArrayList<wrestlers> temp2 = shuffleTeam(team2);
+        for(int i = 0; i < temp2.size(); i++){
+            line2.add(temp2.get(i));
+        }
     }
 
+    //method for all logic in a math
+    // 12 bouts between 2 teams
     public teams runMatch(teams team1, teams team2){
-        //method for all logic in a math
-        // 12 bouts between 2 teams
-        // have a queue implemented using a linked list to see who is wrestling next
+        //calls the method to add to the queue(lines for people waiting)
+        makeLine(team1, team2);
+        
         return team1;
     }
 
