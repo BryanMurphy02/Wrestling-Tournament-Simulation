@@ -6,12 +6,18 @@ import java.util.Random;
 
 public class match{
 
+    //class declarations
+    bout bout = new bout();
+
     //queues that represent the lines for wrestling waiting to participate in a bout
     Queue<wrestlers> line1 = new LinkedList<>();
     Queue<wrestlers> line2 = new LinkedList<>();
 
+    //ArrayLists for the winnders of the bouts
+    ArrayList<wrestlers> winners = new ArrayList<>();
+
     //method to shuffle the wrestlers in a team
-    public static ArrayList<wrestlers> shuffleTeam(teams x){
+    public ArrayList<wrestlers> shuffleTeam(teams x){
         ArrayList<wrestlers> tempTeam = x.getWrestlers();
         Random r = new Random();
         int n = tempTeam.size();
@@ -39,13 +45,37 @@ public class match{
         }
     }
 
-    //method for all logic in a math
+    //method to determine the winner of the match
+    public teams determineWinner(teams team1, teams team2, ArrayList<wrestlers> winners){
+        int numTeam1 = 0;
+        int numTeam2 = 0;
+        for(int i = 0; i < winners.size(); i++){
+            if(team1.getWrestlers().contains(winners.get(i))){
+                numTeam1++;
+            }
+            else{
+                numTeam2++;
+            }
+        }
+        
+        if(numTeam1 > numTeam2){
+            return team1;
+        }
+        return team2;
+    }
+
+    //method for all logic in a match
     // 12 bouts between 2 teams
     public teams runMatch(teams team1, teams team2){
         //calls the method to add to the queue(lines for people waiting)
         makeLine(team1, team2);
+        for(int i = 0; i < 12; i++){
+            wrestlers temp = bout.runBout(line1.peek(), line2.peek());
+            winners.add(temp);
+        }
+        teams winningTeam = determineWinner(team1, team2, winners);
         
-        return team1;
+        return winningTeam;
     }
 
 }
