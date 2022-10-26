@@ -16,7 +16,7 @@ public class run {
         init.initialize();
 
         //making the advancement ArrayLists
-        ArrayList<wrestlers> advancing = new ArrayList<>();
+        ArrayList<teams> advancing = new ArrayList<>();
 
         
         // System.out.print(init.wrestlerDatabase);
@@ -38,9 +38,15 @@ public class run {
         // System.out.println("Teams Database: " + init.teamsDatabase);
 
 
-        //run 8 matches
-        for(int i = 0; i < 8; i++){
-            
+        //run 8 matches for western conference
+        for(int i = 0; i < 8; i+=2){
+            advancing.add(match.runMatch(init.teamsDatabase.get(i), init.teamsDatabase.get(i+1)));
         }
+
+        //run 8 matches for the eastern conference
+        for(int i = 8; i < 16; i+=2){
+            advancing.add(match.runMatch(init.teamsDatabase.get(i), init.teamsDatabase.get(i+1)));
+        }
+
     }
 }
