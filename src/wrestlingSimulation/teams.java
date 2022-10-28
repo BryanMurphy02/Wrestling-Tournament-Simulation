@@ -35,7 +35,7 @@ public class teams{
     }
 
     public String toString(){
-        return "School name: " + school + "\nWrestlers on the Team: " + wrestlers +"\n";
+        return "School name: " + school + "\nWrestlers on the Team: \n" + wrestlers +"\n";
     }
 
     
