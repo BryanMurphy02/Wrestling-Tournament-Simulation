@@ -117,6 +117,42 @@ public class init {
 			
 		}
 
+		//making the teams
+		wrestlers team1[] = new wrestlers[12];
+		wrestlers team2[] = new wrestlers[12];
+		wrestlers team3[] = new wrestlers[12];
+		wrestlers team4[] = new wrestlers[12];
+		wrestlers team5[] = new wrestlers[12];
+		wrestlers team6[] = new wrestlers[12];
+		wrestlers team7[] = new wrestlers[12];
+		wrestlers team8[] = new wrestlers[12];
+		wrestlers team9[] = new wrestlers[12];
+		wrestlers team10[] = new wrestlers[12];
+		wrestlers team11[] = new wrestlers[12];
+		wrestlers team12[] = new wrestlers[12];
+		wrestlers team13[] = new wrestlers[12];
+		wrestlers team14[] = new wrestlers[12];
+		wrestlers team15[] = new wrestlers[12];
+		wrestlers team16[] = new wrestlers[12];
+		wrestlers[] allTeams[] = {team1,team2,team3,team4,team5,team6,team7,team8,team9,team10,team11,team12,team13,team14,team15,team16,};
+		//stack1
+		int length = 32;
+		for(int i = 0; i < length; i++){
+			// for(int k = 0; k < allTeams.length; k++){
+
+			// }
+			if(){
+				
+			}
+		}
+		// for(int i = 0; i < allTeams.length; i++){
+		// 	String team = makeTeamName();
+		// 	int length = 32;
+		// 	for(int k = 0; k < length; k++){
+		// 		allTeams[]
+		// 	}
+		// }
+
 		//adding all the wrestlers to the queue
 		for(int i = 0; i < wrestlerDatabase.size(); i++){
 			entryLine.add(wrestlerDatabase.get(i));
