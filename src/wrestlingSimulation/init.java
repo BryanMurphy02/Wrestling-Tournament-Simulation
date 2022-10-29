@@ -9,6 +9,7 @@ public class init {
 
 	ArrayList<wrestlers> wrestlerDatabase = new ArrayList<>();
 	ArrayList<teams> teamsDatabase = new ArrayList<>();
+    HashMap<String, ArrayList<wrestlers>> teamsDatabase2 = new HashMap<>();
 
 	//size of allNames is 1605
 	ArrayList<String> allNames = new ArrayList<>(Arrays.asList("Aaran", "Aaren", "Aarez", "Aarman", "Aaron", "Aaron-James", "Aarron", "Aaryan", "Aaryn", "Aayan", "Aazaan", "Abaan", "Abbas", "Abdallah", "Abdalroof", "Abdihakim", "Abdirahman", "Abdisalam", "Abdul", "Abdul-Aziz", "Abdulbasir", "Abdulkadir", "Abdulkarem", "Abdulkhader", "Abdullah", "Abdul-Majeed", "Abdulmalik", "Abdul-Rehman", "Abdur", "Abdurraheem", "Abdur-Rahman", "Abdur-Rehmaan", "Abel", "Abhinav", "Abhisumant", "Abid", "Abir", "Abraham", "Abu", "Abubakar", "Ace", "Adain", "Adam", "Adam-James", "Addison", "Addisson", "Adegbola", "Adegbolahan", "Aden", "Adenn", "Adie", "Adil", "Aditya", "Adnan", "Adrian", "Adrien", "Aedan", "Aedin", "Aedyn", "Aeron", "Afonso", "Ahmad", "Ahmed", "Ahmed-Aziz", "Ahoua", "Ahtasham", "Aiadan", "Aidan", "Aiden", "Aiden-Jack", "Aiden-Vee", "Aidian", "Aidy", "Ailin", "Aiman", "Ainsley", "Ainslie", "Airen", "Airidas", "Airlie", "AJ", "Ajay", "A-Jay", "Ajayraj", "Akan", "Akram", "Al", "Ala", "Alan", "Alanas", "Alasdair", "Alastair", "Alber", "Albert", "Albie", "Aldred", "Alec", "Aled", "Aleem", "Aleksandar", "Aleksander", "Aleksandr", "Aleksandrs", "Alekzander", "Alessandro", "Alessio", "Alex", "Alexander", "Alexei", "Alexx", "Alexzander", "Alf", "Alfee", "Alfie", "Alfred", "Alfy", "Alhaji", "Al-Hassan", "Ali", "Aliekber", "Alieu", "Alihaider", "Alisdair", "Alishan", "Alistair", "Alistar", "Alister", "Aliyaan", "Allan", "Allan-Laiton", "Allen",
@@ -29,6 +30,8 @@ public class init {
 	Stack<wrestlers> stack4 = new Stack<>();
 	Stack<wrestlers> stack5 = new Stack<>();
 	Stack<wrestlers> stack6 = new Stack<>();
+	ArrayList<Stack> stacksList = new ArrayList<>();
+	
 
 	//making the queue
 	Queue<wrestlers> entryLine = new LinkedList<>();
@@ -102,26 +105,35 @@ public class init {
 			entryLine.add(wrestlerDatabase.get(i));
 		}
 
-		for(int i = 0; i < entryLine.size(); i++){
-			if(i < 32){
-				stack1.add(entryLine.peek());
-			}
-			else if(i >= 32 && i < 64){
-				stack2.add(entryLine.peek());
-			}
-			else if(i >= 64 && i < 96){
-				stack3.add(entryLine.peek());
-			}
-			else if(i >= 96 && i < 128){
-				stack4.add(entryLine.peek());
-			}
-			else if(i >= 128 && i < 160){
-				stack5.add(entryLine.peek());
-			}
-			else if(i >= 160 && i < 192){
-				stack6.add(entryLine.peek());
-			}
-		}
+		/*
+		 * Re-do all of this and add them to an array list
+		 * 
+		 */
+
+		Integer keys[] ={32, 64, 96, 128, 160, 192};
+		// for(int i = 0; i < entryLine.size(); i++){
+		// 	if(i < 32){
+		// 		stack1.add(entryLine.peek());
+		// 	}
+		// 	else if(i >= 32 && i < 64){
+		// 		stack2.add(entryLine.peek());
+		// 	}
+		// 	else if(i >= 64 && i < 96){
+		// 		stack3.add(entryLine.peek());
+		// 	}
+		// 	else if(i >= 96 && i < 128){
+		// 		stack4.add(entryLine.peek());
+		// 	}
+		// 	else if(i >= 128 && i < 160){
+		// 		stack5.add(entryLine.peek());
+		// 	}
+		// 	else if(i >= 160 && i < 192){
+		// 		stack6.add(entryLine.peek());
+		// 	}
+		// }
+
+
+
 
 
 	}

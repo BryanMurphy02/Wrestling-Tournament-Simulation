@@ -1,11 +1,16 @@
 package wrestlingSimulation;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Random;
 //12 wresters on the team
 // Team record(wins and losses)
 // Team Schedule
 
+import javax.print.attribute.HashAttributeSet;
+
 public class teams{
+
+    HashMap<String, ArrayList<wrestlers>> teamsDatabase = new HashMap<>();
 
     private String school;
     private ArrayList<wrestlers> wrestlers;
