@@ -1,8 +1,7 @@
 package wrestlingSimulation;
 import java.lang.Math;
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 
 
 
@@ -22,6 +21,17 @@ public class init {
 	ArrayList<Double> allStrength = new ArrayList<>(Arrays.asList(0.25, 0.5, 0.75,1.0, 1.25, 1.5, 1.75, 2.0, 2.25, 2.5, 2.75, 3.0, 3.25, 3.5, 3.75, 4.0, 4.25, 4.5, 4.75, 5.0, 5.5, 5.25, 5.75, 6.0, 6.25, 6.5, 6.75, 7.0, 7.25, 7.5, 7.75, 8.0, 8.25, 8.5, 8.75, 9.0, 9.25, 9.5, 9.75, 10.0));
 	ArrayList<Integer> weightClass = new ArrayList<>(Arrays.asList(115, 125, 134, 143, 154, 163, 174, 190, 203, 214, 276));
 	ArrayList<String> schoolNames = new ArrayList<>();
+
+	//making the stacks
+	Stack<wrestlers> stack1 = new Stack<>();
+	Stack<wrestlers> stack2 = new Stack<>();
+	Stack<wrestlers> stack3 = new Stack<>();
+	Stack<wrestlers> stack4 = new Stack<>();
+	Stack<wrestlers> stack5 = new Stack<>();
+	Stack<wrestlers> stack6 = new Stack<>();
+
+	//making the queue
+	Queue<wrestlers> entryLine = new LinkedList<>();
 
 	public int randomName(){
 		int max = 1605;
@@ -85,6 +95,32 @@ public class init {
 			}
 
 			
+		}
+
+		//adding all the wrestlers to the queue
+		for(int i = 0; i < wrestlerDatabase.size(); i++){
+			entryLine.add(wrestlerDatabase.get(i));
+		}
+
+		for(int i = 0; i < entryLine.size(); i++){
+			if(i < 32){
+				stack1.add(entryLine.peek());
+			}
+			else if(i >= 32 && i < 64){
+				stack2.add(entryLine.peek());
+			}
+			else if(i >= 64 && i < 96){
+				stack3.add(entryLine.peek());
+			}
+			else if(i >= 96 && i < 128){
+				stack4.add(entryLine.peek());
+			}
+			else if(i >= 128 && i < 160){
+				stack5.add(entryLine.peek());
+			}
+			else if(i >= 160 && i < 192){
+				stack6.add(entryLine.peek());
+			}
 		}
 
 
