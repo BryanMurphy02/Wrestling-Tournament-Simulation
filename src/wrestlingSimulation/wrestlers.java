@@ -49,6 +49,6 @@ public class wrestlers {
 	}
 
 	public String toString(){
-		return "Wrestler: " + this.name + "\nStrength: " + this.strength + "\nID: " + this.id + "\nWeight Class: " + this.weight + "\n\n";
+		return "Wrestler: " + this.name + "\nStrength: " + this.strength + "\nID: " + this.id + "\nWeight Class: " + this.weight + "\n";
 	}
 }

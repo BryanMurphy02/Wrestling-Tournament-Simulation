@@ -10,20 +10,19 @@ import javax.print.attribute.HashAttributeSet;
 
 public class teams{
 
-    HashMap<String, ArrayList<wrestlers>> teamsDatabase = new HashMap<>();
 
-    private String school;
+    private String teamName;
     private ArrayList<wrestlers> wrestlers;
 
 
-    public teams(String school, ArrayList<wrestlers> wrestlers){
-        this.school = school;
+    public teams(String teamName, ArrayList<wrestlers> wrestlers){
+        this.teamName = teamName;
         this.wrestlers = wrestlers;
     }
 
 
-    public void setSchool(String school){
-        this.school = school;
+    public void setSchool(String teamName){
+        this.teamName = teamName;
     }
 
     public void setWrestlers(ArrayList<wrestlers> wresters){
@@ -31,8 +30,8 @@ public class teams{
     }
 
 
-    public String getSchool(){
-        return this.school;
+    public String getTeamName(){
+        return this.teamName;
     }
 
     public ArrayList<wrestlers> getWrestlers(){
@@ -40,7 +39,7 @@ public class teams{
     }
 
     public String toString(){
-        return "School name: " + school + "\nWrestlers on the Team: \n" + wrestlers +"\n";
+        return "Team name: " + teamName + "\nWrestlers on the Team: \n" + wrestlers +"\n";
     }
 
     
