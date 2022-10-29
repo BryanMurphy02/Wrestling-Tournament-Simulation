@@ -30,7 +30,8 @@ public class init {
 	Stack<wrestlers> stack4 = new Stack<>();
 	Stack<wrestlers> stack5 = new Stack<>();
 	Stack<wrestlers> stack6 = new Stack<>();
-	ArrayList<Stack> stacksList = new ArrayList<>();
+	ArrayList<Stack<wrestlers>> stacks = new ArrayList<>();
+	// stacks.add(stack1);
 	
 
 	//making the queue
