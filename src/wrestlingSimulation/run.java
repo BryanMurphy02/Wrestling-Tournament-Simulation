@@ -83,7 +83,7 @@ public class run {
         // System.out.print("2nd Round teams: " + secondRound.size() + "\n\n\n");
         // System.out.print("3rd Round teams: " + thirdRound.size() + "\n\n\n");
         // System.out.print("4th Round teams: " + fourthRound.size() + "\n\n\n");
-        // System.out.print("Winner: \n\n" + winner + "\n\n\n");
+        System.out.print("Winner: \n\n" + winner + "\n\n\n");
 
         // System.out.println("Size of stack1: " + init.stack1.size());
         // System.out.println("Size of stack6: " + init.stack6.size());

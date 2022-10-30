@@ -1,4 +1,11 @@
 package wrestlingSimulation;
 //individual wrestlers records
-//winds and losses
+//wins and losses
 // head to head results in seeding
+
+public class scores_records{
+
+
+
+
+}

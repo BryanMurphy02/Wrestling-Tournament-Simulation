@@ -99,23 +99,6 @@ public class init {
 		}
 
 
-
-		//making the teams
-		for(int i = 0; i < 16; i++){
-			String team = makeTeamName();
-			ArrayList<wrestlers> wrestlers = new ArrayList<>();
-			for(int k = 0; k < 192; k++){
-				if(k == 12 || k == 24 || k == 36 || k == 48 || k == 60 || k == 72 || k == 84 || k == 96 || k == 108 || k == 120 || k == 132 || k == 144 || k == 156 || k== 168 || k == 180 || k == 192){
-					teams newTeam = new teams(team, wrestlers);
-					teamsDatabase.add(newTeam);
-					wrestlers.clear();
-				}
-				wrestlers.add(wrestlerDatabase.get(k));
-			}
-
-			
-		}
-
 		//adding all the wrestlers to the queue
 		for(int i = 0; i < wrestlerDatabase.size(); i++){
 			entryLine.add(wrestlerDatabase.get(i));
