@@ -11,7 +11,8 @@ public class init {
 
 	ArrayList<wrestlers> wrestlerDatabase = new ArrayList<>();
 	ArrayList<teams> teamsDatabase = new ArrayList<>();
-	HashMap<wrestlers, Integer[]> records = new HashMap<>();
+	HashMap<wrestlers, Integer> wins = new HashMap<>();
+	HashMap<wrestlers, Integer> losses = new HashMap<>();
 
 	//size of allNames is 1605
 	ArrayList<String> allNames = new ArrayList<>(Arrays.asList("Aaran", "Aaren", "Aarez", "Aarman", "Aaron", "Aaron-James", "Aarron", "Aaryan", "Aaryn", "Aayan", "Aazaan", "Abaan", "Abbas", "Abdallah", "Abdalroof", "Abdihakim", "Abdirahman", "Abdisalam", "Abdul", "Abdul-Aziz", "Abdulbasir", "Abdulkadir", "Abdulkarem", "Abdulkhader", "Abdullah", "Abdul-Majeed", "Abdulmalik", "Abdul-Rehman", "Abdur", "Abdurraheem", "Abdur-Rahman", "Abdur-Rehmaan", "Abel", "Abhinav", "Abhisumant", "Abid", "Abir", "Abraham", "Abu", "Abubakar", "Ace", "Adain", "Adam", "Adam-James", "Addison", "Addisson", "Adegbola", "Adegbolahan", "Aden", "Adenn", "Adie", "Adil", "Aditya", "Adnan", "Adrian", "Adrien", "Aedan", "Aedin", "Aedyn", "Aeron", "Afonso", "Ahmad", "Ahmed", "Ahmed-Aziz", "Ahoua", "Ahtasham", "Aiadan", "Aidan", "Aiden", "Aiden-Jack", "Aiden-Vee", "Aidian", "Aidy", "Ailin", "Aiman", "Ainsley", "Ainslie", "Airen", "Airidas", "Airlie", "AJ", "Ajay", "A-Jay", "Ajayraj", "Akan", "Akram", "Al", "Ala", "Alan", "Alanas", "Alasdair", "Alastair", "Alber", "Albert", "Albie", "Aldred", "Alec", "Aled", "Aleem", "Aleksandar", "Aleksander", "Aleksandr", "Aleksandrs", "Alekzander", "Alessandro", "Alessio", "Alex", "Alexander", "Alexei", "Alexx", "Alexzander", "Alf", "Alfee", "Alfie", "Alfred", "Alfy", "Alhaji", "Al-Hassan", "Ali", "Aliekber", "Alieu", "Alihaider", "Alisdair", "Alishan", "Alistair", "Alistar", "Alister", "Aliyaan", "Allan", "Allan-Laiton", "Allen",
@@ -88,6 +89,7 @@ public class init {
 		return allTeamNames.get(randomTeamName());
 	}
 
+
 	public void initialize(){
 
 		//making all the wrestlers
@@ -99,8 +101,14 @@ public class init {
 
 			wrestlers newWrestler = new wrestlers(name, strength, id, weight);
 			wrestlerDatabase.add(newWrestler);
-			record.addWrestler(records, newWrestler);
 		}
+
+		//adding all wrestlers to the HashMaps for records
+		for(int i = 0; i < wrestlerDatabase.size(); i++){
+			record.addWrestler(wins, wrestlerDatabase.get(i));
+			record.addWrestler(losses, wrestlerDatabase.get(i));
+		}
+		
 
 
 		//adding all the wrestlers to the queue

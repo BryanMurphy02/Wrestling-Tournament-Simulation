@@ -18,32 +18,32 @@ public class bout{
         //there is a 25% chance that if a wrestler's strength is lower they can win
         if(wrestler1.getStrength() > wrestler2.getStrength()){
             if(chance.getChance(25) == true){
-                record.addWin(init.records, wrestler2);
-                record.addLoss(init.records, wrestler1);
+                record.updateRecord(init.wins, wrestler2);
+                record.updateRecord(init.losses, wrestler1);
                 return wrestler2;
             }
             else{
-                record.addWin(init.records, wrestler1);
-                record.addLoss(init.records, wrestler2);
+                record.updateRecord(init.wins, wrestler1);
+                record.updateRecord(init.losses, wrestler2);
                 return wrestler1;
             }
         }
         else if(wrestler2.getStrength() > wrestler1.getStrength()){
             if(chance.getChance(25) == true){
-                record.addWin(init.records, wrestler1);
-                record.addLoss(init.records, wrestler2);
+                record.updateRecord(init.wins, wrestler1);
+                record.updateRecord(init.losses, wrestler2);
                 return wrestler1;
             }
             else{
-                record.addWin(init.records, wrestler2);
-                record.addLoss(init.records, wrestler1);
+                record.updateRecord(init.wins, wrestler2);
+                record.updateRecord(init.losses, wrestler1);
                 return wrestler2;
             }
         }
 
 
-        record.addWin(init.records, wrestler1);
-        record.addLoss(init.records, wrestler2);
+        record.updateRecord(init.wins, wrestler1);
+        record.updateRecord(init.losses, wrestler2);
         return wrestler1;
     }
 

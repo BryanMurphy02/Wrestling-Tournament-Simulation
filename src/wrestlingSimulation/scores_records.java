@@ -12,31 +12,30 @@ public class scores_records{
     
 
     //method for adding a new wrestler to the HashMap with a record of 0-0
-    public void addWrestler(HashMap<wrestlers, Integer[]> records, wrestlers wrestler){
-        Integer[] record = {0, 0};
-        records.put(wrestler, record);
+    public void addWrestler(HashMap<wrestlers, Integer> map, wrestlers wrestler){
+        Integer temp = 0;
+        map.putIfAbsent(wrestler, temp);
     }
 
-    //method to add a win the to passed in wrestler's record
-    public void addWin(HashMap<wrestlers, Integer[]> records, wrestlers wrestler){
-        // if(records.containsKey(wrestler)){
-            Integer[] temp = records.get(wrestler);
-            temp[0] = temp[0] + 1;
-            records.put(wrestler, temp);
+    //method to update a wrestler's record
+    public void updateRecord(HashMap<wrestlers, Integer> map, wrestlers wrestler){
+        map.replace(wrestler, map.get(wrestler)+1);
+    }
+
+    // //method to add a loss the to passed in wrestler's record
+    // public void addLoss(HashMap<wrestlers, Integer> map, wrestlers wrestler){
+        
+    // }
+
+    public void printMap(HashMap<wrestlers, Integer[]> records){
+        // for(int i = 0; i < records.size(); i++){
+            
         // }
+        System.out.println(records);
     }
 
-    //method to add a loss the to passed in wrestler's record
-    public void addLoss(HashMap<wrestlers, Integer[]> records, wrestlers wrestler){
-        // if(records.containsKey(wrestler)){
-            Integer[] temp = records.get(wrestler);
-            temp[1] = temp[1] + 1;
-            records.put(wrestler, temp);
-        // }
-    }
-
-    public String getRecord(HashMap<wrestlers, Integer[]> records, wrestlers wrestler){
-        Integer[] temp = records.get(wrestler);
+    public String getRecord(HashMap<wrestlers, Integer> wins, HashMap<wrestlers, Integer> losses, wrestlers wrestler){
+        // Integer temp = map.get(wrestler);
         // if(temp[0] == 0){
         //     return wrestler.getName() + " has no wins and " + temp[1] + " losses\n";
         // }
@@ -52,6 +51,6 @@ public class scores_records{
         // else if(temp[1] == 1){
         //     return wrestler.getName() + " record is: " + temp[0] + " wins and " + temp[1] + " loss\n";
         // }
-        return wrestler.getName() + " record is: " + temp[0] + " wins and " + temp[1] + " losses\n";
+        return wrestler.getName() + " record is: " + wins + " wins and " + losses + " losses\n";
     }
 }

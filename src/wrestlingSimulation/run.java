@@ -1,6 +1,7 @@
 package wrestlingSimulation;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 //main class
 //run all the matches here
@@ -93,9 +94,20 @@ public class run {
         // System.out.print(record.getRecord(init.records, winner.getWrestlers().get(1)));
         // System.out.println(init.records.size());
 
-        // Integer[] temp69 = init.records.get(init.wrestlerDatabase.get(0));
+        // String temp69 = Arrays.toString(init.records.get(init.wrestlerDatabase.get(12)));
         // System.out.println(temp69);
+        // System.out.println(init.records.get(init.wrestlerDatabase.get(0)));
+        // System.out.println("Size of HashMap: " + init.records.size());
+
+        // record.printMap(init.records);
 
 
+        // for(int i = 0; i < winner.getWrestlers().size(); i++){
+        //     wrestlers temp99 = winner.getWrestlers().get(i);
+        //     System.out.println(record.getRecord(init.wins, init.losses, temp99));
+        // }
+
+        // System.out.println("Wins HashMap size: " +init.wins.size());
+        // System.out.println("Losses HashMap size: " +init.losses.size());
     }
 }
