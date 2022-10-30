@@ -13,6 +13,7 @@ public class run {
         init init = new init();
         bout bout = new bout();
         match match = new match();
+        scores_records record = new scores_records();
         init.initialize();
 
         //making the advancement ArrayLists
@@ -83,10 +84,14 @@ public class run {
         // System.out.print("2nd Round teams: " + secondRound.size() + "\n\n\n");
         // System.out.print("3rd Round teams: " + thirdRound.size() + "\n\n\n");
         // System.out.print("4th Round teams: " + fourthRound.size() + "\n\n\n");
-        System.out.print("Winner: \n\n" + winner + "\n\n\n");
+        // System.out.print("Winner: \n\n" + winner + "\n\n\n");
+        
 
         // System.out.println("Size of stack1: " + init.stack1.size());
         // System.out.println("Size of stack6: " + init.stack6.size());
+
+        System.out.print(record.getRecord(init.records, winner.getWrestlers().get(0)));
+        // System.out.println(init.records.size());
 
 
     }
