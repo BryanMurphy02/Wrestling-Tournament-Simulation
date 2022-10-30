@@ -90,8 +90,11 @@ public class run {
         // System.out.println("Size of stack1: " + init.stack1.size());
         // System.out.println("Size of stack6: " + init.stack6.size());
 
-        System.out.print(record.getRecord(init.records, winner.getWrestlers().get(0)));
+        // System.out.print(record.getRecord(init.records, winner.getWrestlers().get(1)));
         // System.out.println(init.records.size());
+
+        // Integer[] temp69 = init.records.get(init.wrestlerDatabase.get(0));
+        // System.out.println(temp69);
 
 
     }
