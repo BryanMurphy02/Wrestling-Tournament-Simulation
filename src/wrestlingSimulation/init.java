@@ -9,7 +9,6 @@ public class init {
 
 	ArrayList<wrestlers> wrestlerDatabase = new ArrayList<>();
 	ArrayList<teams> teamsDatabase = new ArrayList<>();
-    HashMap<String, ArrayList<wrestlers>> teamsDatabase2 = new HashMap<>();
 
 	//size of allNames is 1605
 	ArrayList<String> allNames = new ArrayList<>(Arrays.asList("Aaran", "Aaren", "Aarez", "Aarman", "Aaron", "Aaron-James", "Aarron", "Aaryan", "Aaryn", "Aayan", "Aazaan", "Abaan", "Abbas", "Abdallah", "Abdalroof", "Abdihakim", "Abdirahman", "Abdisalam", "Abdul", "Abdul-Aziz", "Abdulbasir", "Abdulkadir", "Abdulkarem", "Abdulkhader", "Abdullah", "Abdul-Majeed", "Abdulmalik", "Abdul-Rehman", "Abdur", "Abdurraheem", "Abdur-Rahman", "Abdur-Rehmaan", "Abel", "Abhinav", "Abhisumant", "Abid", "Abir", "Abraham", "Abu", "Abubakar", "Ace", "Adain", "Adam", "Adam-James", "Addison", "Addisson", "Adegbola", "Adegbolahan", "Aden", "Adenn", "Adie", "Adil", "Aditya", "Adnan", "Adrian", "Adrien", "Aedan", "Aedin", "Aedyn", "Aeron", "Afonso", "Ahmad", "Ahmed", "Ahmed-Aziz", "Ahoua", "Ahtasham", "Aiadan", "Aidan", "Aiden", "Aiden-Jack", "Aiden-Vee", "Aidian", "Aidy", "Ailin", "Aiman", "Ainsley", "Ainslie", "Airen", "Airidas", "Airlie", "AJ", "Ajay", "A-Jay", "Ajayraj", "Akan", "Akram", "Al", "Ala", "Alan", "Alanas", "Alasdair", "Alastair", "Alber", "Albert", "Albie", "Aldred", "Alec", "Aled", "Aleem", "Aleksandar", "Aleksander", "Aleksandr", "Aleksandrs", "Alekzander", "Alessandro", "Alessio", "Alex", "Alexander", "Alexei", "Alexx", "Alexzander", "Alf", "Alfee", "Alfie", "Alfred", "Alfy", "Alhaji", "Al-Hassan", "Ali", "Aliekber", "Alieu", "Alihaider", "Alisdair", "Alishan", "Alistair", "Alistar", "Alister", "Aliyaan", "Allan", "Allan-Laiton", "Allen",
@@ -122,6 +121,7 @@ public class init {
 			entryLine.add(wrestlerDatabase.get(i));
 		}
 
+		//removing wreslters from the queue and adding them to the stacks
 		int queueLength = entryLine.size();
 		for(int i = 0; i < queueLength; i++){
 			if(i < 32){
@@ -146,6 +146,48 @@ public class init {
 		}
 
 
+		//making the teams by pulling two wrestlers from each stack and adding them to a team making 16 teams from 6 stacks
+		wrestlers team1[] = new wrestlers[12];
+		wrestlers team2[] = new wrestlers[12];
+		wrestlers team3[] = new wrestlers[12];
+		wrestlers team4[] = new wrestlers[12];
+		wrestlers team5[] = new wrestlers[12];
+		wrestlers team6[] = new wrestlers[12];
+		wrestlers team7[] = new wrestlers[12];
+		wrestlers team8[] = new wrestlers[12];
+		wrestlers team9[] = new wrestlers[12];
+		wrestlers team10[] = new wrestlers[12];
+		wrestlers team11[] = new wrestlers[12];
+		wrestlers team12[] = new wrestlers[12];
+		wrestlers team13[] = new wrestlers[12];
+		wrestlers team14[] = new wrestlers[12];
+		wrestlers team15[] = new wrestlers[12];
+		wrestlers team16[] = new wrestlers[12];
+		ArrayList<wrestlers[]> allTeams = new ArrayList<>(Arrays.asList(team1,team2,team3,team4,team5,team6,team7,team8,team9,team10,team11,team12,team13,team14,team15,team16));
+
+		for(int i = 0; i < allTeams.size(); i++){
+			for(int j = 0; j < 12; j++){
+				if(!stack1.empty())
+					allTeams.get(i)[j] = stack1.pop();
+				else if(!stack2.empty())
+					allTeams.get(i)[j] = stack2.pop();
+				else if(!stack3.empty())
+					allTeams.get(i)[j] = stack3.pop();
+				else if(!stack4.empty())
+					allTeams.get(i)[j] = stack4.pop();
+				else if(!stack5.empty())
+					allTeams.get(i)[j] = stack5.pop();
+				else if(!stack6.empty())
+					allTeams.get(i)[j] = stack6.pop();
+			}
+		}
+
+		for(int i = 0; i < allTeams.size(); i++){
+			String teamName = makeTeamName();
+			ArrayList<wrestlers> temp = new ArrayList<>(Arrays.asList(allTeams.get(i)));
+			teams newTeam = new teams(teamName, temp);
+			teamsDatabase.add(newTeam);
+		}
 
 	}
 
