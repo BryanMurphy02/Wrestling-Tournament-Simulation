@@ -4,8 +4,6 @@ package wrestlingSimulation;
 // if they have the same strength make it random who wins
 // even if one person is stronger make there be a chance the other person can still win
 
-import java.util.Arrays;
-import java.util.HashMap;
 
 
 public class bout{
