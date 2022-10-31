@@ -19,7 +19,13 @@ public class scores_records{
 
     //method to update a wrestler's record
     public void updateRecord(HashMap<wrestlers, Integer> map, wrestlers wrestler){
-        map.replace(wrestler, map.get(wrestler)+1);
+        // map.replace(wrestler, map.get(wrestler)+1);
+    }
+
+    public void updateID(HashMap<Integer, int[]> map, int id){
+        int[] temp = map.get(id);
+        temp[0]+=1;
+        map.replace(id, temp);
     }
 
     // //method to add a loss the to passed in wrestler's record

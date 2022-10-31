@@ -4,7 +4,7 @@ public class wrestlers {
 	
 	private String name;
 	private double strength;//out of 10.0
-	private int id;
+	private Integer id;
 	private int weight;
 
 
@@ -24,7 +24,7 @@ public class wrestlers {
 		return this.strength;
 	}
 	
-	int getId() {
+	Integer getId() {
 		return this.id;
 	}
 	

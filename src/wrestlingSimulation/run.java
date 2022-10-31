@@ -109,5 +109,13 @@ public class run {
 
         // System.out.println("Wins HashMap size: " +init.wins.size());
         // System.out.println("Losses HashMap size: " +init.losses.size());
+        System.out.println("Size of idMap: " + init.idMap.size());
+        System.out.println("Before update: " + Arrays.toString(init.idMap.get(init.wrestlerDatabase.get(0).getId())));
+        record.updateID(init.idMap, init.wrestlerDatabase.get(0).getId());
+        System.out.println("After update: " + Arrays.toString(init.idMap.get(init.wrestlerDatabase.get(0).getId())));
+
+
+
+        // System.out.println(init.wrestlerDatabase);
     }
 }
