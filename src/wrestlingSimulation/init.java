@@ -12,7 +12,8 @@ public class init {
 
 	static ArrayList<wrestlers> wrestlerDatabase = new ArrayList<>();
 	static ArrayList<teams> teamsDatabase = new ArrayList<>();
-	static HashMap<Integer, int[]> records = new HashMap<>();
+	static HashMap<Integer, int[]> wrestlerRecords = new HashMap<>();
+	static HashMap<Integer, int[]> teamRecords = new HashMap<>();
 
 
 	//size of allNames is 1605

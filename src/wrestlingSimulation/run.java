@@ -122,6 +122,8 @@ public class run{
 
         // System.out.println(init.wrestlerDatabase);
 
-        System.out.println(scores_records.getRecord(winner.getWrestlers().get(0).getId()));
+        for(int i = 0; i < winner.getWrestlers().size(); i++){
+            System.out.println(scores_records.getWrestlerRecord(winner.getWrestlers().get(i).getId()));
+        }
     }
 }
