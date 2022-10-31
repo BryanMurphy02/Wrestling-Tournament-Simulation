@@ -70,7 +70,9 @@ public class match{
         //calls the method to add to the queue(lines for people waiting)
         makeLine(team1, team2);
         for(int i = 0; i < 12; i++){
-            wrestlers temp = bout.runBout(line1.remove(), line2.remove());
+            wrestlers wrestler1 = line1.remove();
+            wrestlers wrestler2 = line2.remove();
+            wrestlers temp = bout.runBout(wrestler1, wrestler2);
             winners.add(temp);
         }
         teams winningTeam = determineWinner(team1, team2, winners);

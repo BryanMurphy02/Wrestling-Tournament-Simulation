@@ -14,7 +14,7 @@ public class run {
         init init = new init();
         bout bout = new bout();
         match match = new match();
-        scores_records record = new scores_records();
+        // scores_records record = new scores_records();
         init.initialize();
 
         //making the advancement ArrayLists
@@ -109,10 +109,15 @@ public class run {
 
         // System.out.println("Wins HashMap size: " +init.wins.size());
         // System.out.println("Losses HashMap size: " +init.losses.size());
-        System.out.println("Size of idMap: " + init.idMap.size());
-        System.out.println("Before update: " + Arrays.toString(init.idMap.get(init.wrestlerDatabase.get(0).getId())));
-        record.updateID(init.idMap, init.wrestlerDatabase.get(0).getId());
-        System.out.println("After update: " + Arrays.toString(init.idMap.get(init.wrestlerDatabase.get(0).getId())));
+        // System.out.println("Size of idMap: " + init.idMap.size());
+
+        // System.out.println("Before update: " + Arrays.toString(init.records.get(init.wrestlerDatabase.get(0).getId())));
+
+
+        // record.updateRecord(init.records, init.wrestlerDatabase.get(0).getId(), 1);
+
+    
+        // System.out.println("After update: " + Arrays.toString(init.records.get(init.wrestlerDatabase.get(0).getId())));
 
 
 

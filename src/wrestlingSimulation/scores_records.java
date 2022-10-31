@@ -17,14 +17,14 @@ public class scores_records{
         map.putIfAbsent(wrestler, temp);
     }
 
-    //method to update a wrestler's record
-    public void updateRecord(HashMap<wrestlers, Integer> map, wrestlers wrestler){
-        // map.replace(wrestler, map.get(wrestler)+1);
-    }
-
-    public void updateID(HashMap<Integer, int[]> map, int id){
+    public void updateRecord(HashMap<Integer, int[]> map, int id, int update){
         int[] temp = map.get(id);
-        temp[0]+=1;
+        if(update > 0){
+            temp[0]+=1;
+        }
+        else{
+            temp[1]-=1;
+        }
         map.replace(id, temp);
     }
 
