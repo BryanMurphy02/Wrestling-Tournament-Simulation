@@ -1,17 +1,16 @@
 package wrestlingSimulation;
 import java.lang.Math;
-import java.lang.reflect.Array;
 import java.util.*;
 
 
 
 public class init {
 
-	scores_records record = new scores_records();
+	// scores_records record = new scores_records();
+	bout bout = new bout();
 
 	ArrayList<wrestlers> wrestlerDatabase = new ArrayList<>();
 	ArrayList<teams> teamsDatabase = new ArrayList<>();
-	HashMap<Integer, int[]> records = new HashMap<>();
 
 	//size of allNames is 1605
 	ArrayList<String> allNames = new ArrayList<>(Arrays.asList("Aaran", "Aaren", "Aarez", "Aarman", "Aaron", "Aaron-James", "Aarron", "Aaryan", "Aaryn", "Aayan", "Aazaan", "Abaan", "Abbas", "Abdallah", "Abdalroof", "Abdihakim", "Abdirahman", "Abdisalam", "Abdul", "Abdul-Aziz", "Abdulbasir", "Abdulkadir", "Abdulkarem", "Abdulkhader", "Abdullah", "Abdul-Majeed", "Abdulmalik", "Abdul-Rehman", "Abdur", "Abdurraheem", "Abdur-Rahman", "Abdur-Rehmaan", "Abel", "Abhinav", "Abhisumant", "Abid", "Abir", "Abraham", "Abu", "Abubakar", "Ace", "Adain", "Adam", "Adam-James", "Addison", "Addisson", "Adegbola", "Adegbolahan", "Aden", "Adenn", "Adie", "Adil", "Aditya", "Adnan", "Adrian", "Adrien", "Aedan", "Aedin", "Aedyn", "Aeron", "Afonso", "Ahmad", "Ahmed", "Ahmed-Aziz", "Ahoua", "Ahtasham", "Aiadan", "Aidan", "Aiden", "Aiden-Jack", "Aiden-Vee", "Aidian", "Aidy", "Ailin", "Aiman", "Ainsley", "Ainslie", "Airen", "Airidas", "Airlie", "AJ", "Ajay", "A-Jay", "Ajayraj", "Akan", "Akram", "Al", "Ala", "Alan", "Alanas", "Alasdair", "Alastair", "Alber", "Albert", "Albie", "Aldred", "Alec", "Aled", "Aleem", "Aleksandar", "Aleksander", "Aleksandr", "Aleksandrs", "Alekzander", "Alessandro", "Alessio", "Alex", "Alexander", "Alexei", "Alexx", "Alexzander", "Alf", "Alfee", "Alfie", "Alfred", "Alfy", "Alhaji", "Al-Hassan", "Ali", "Aliekber", "Alieu", "Alihaider", "Alisdair", "Alishan", "Alistair", "Alistar", "Alister", "Aliyaan", "Allan", "Allan-Laiton", "Allen",
@@ -105,7 +104,7 @@ public class init {
 		//adding all wrestlers to the HashMaps for records
 		for(int i = 0; i < wrestlerDatabase.size(); i++){
 			int temp[] = {0,0};
-			records.put(wrestlerDatabase.get(i).getId(), temp);
+			bout.addID(wrestlerDatabase.get(i).getId(), temp);
 		}
 		
 

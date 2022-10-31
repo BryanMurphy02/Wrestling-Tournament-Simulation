@@ -3,60 +3,19 @@ package wrestlingSimulation;
 //wins and losses
 // head to head results in seeding
 
+
 import java.util.HashMap;
 
-import javax.print.attribute.HashAttributeSet;
 
-public class scores_records{
+abstract class scores_records{
 
-    
+    public abstract void addID(int id, int[]record);
 
-    //method for adding a new wrestler to the HashMap with a record of 0-0
-    public void addWrestler(HashMap<wrestlers, Integer> map, wrestlers wrestler){
-        Integer temp = 0;
-        map.putIfAbsent(wrestler, temp);
-    }
+    public abstract void addWin(int id);
 
-    public void updateRecord(HashMap<Integer, int[]> map, int id, int update){
-        int[] temp = map.get(id);
-        if(update > 0){
-            temp[0]+=1;
-        }
-        else{
-            temp[1]-=1;
-        }
-        map.replace(id, temp);
-    }
+    public abstract void addLoss(int id);
 
-    // //method to add a loss the to passed in wrestler's record
-    // public void addLoss(HashMap<wrestlers, Integer> map, wrestlers wrestler){
-        
-    // }
+    public abstract void printMap(HashMap<wrestlers, Integer[]> records);
 
-    public void printMap(HashMap<wrestlers, Integer[]> records){
-        // for(int i = 0; i < records.size(); i++){
-            
-        // }
-        System.out.println(records);
-    }
-
-    public String getRecord(HashMap<wrestlers, Integer> wins, HashMap<wrestlers, Integer> losses, wrestlers wrestler){
-        // Integer temp = map.get(wrestler);
-        // if(temp[0] == 0){
-        //     return wrestler.getName() + " has no wins and " + temp[1] + " losses\n";
-        // }
-        // else if(temp[1] == 0){
-        //     return wrestler.getName() + " has a flawless record with " + temp[0] + " wins\n";
-        // }
-        // else if(temp[0] == 1){
-        //     if(temp[1] == 1){
-        //         return wrestler.getName() + " record is: " + temp[0] + " win and " + temp[1] + " loss\n";
-        //     }
-        //     return wrestler.getName() + " record is: " + temp[0] + " win and " + temp[1] + " losses\n";
-        // }
-        // else if(temp[1] == 1){
-        //     return wrestler.getName() + " record is: " + temp[0] + " wins and " + temp[1] + " loss\n";
-        // }
-        return wrestler.getName() + " record is: " + wins + " wins and " + losses + " losses\n";
-    }
+    public abstract String getRecord(int id);
 }

@@ -4,10 +4,10 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Random;
 
-public class match{
+public class match extends bout{
 
     //class declarations
-    bout bout = new bout();
+    // bout bout = new bout();
 
     //queues that represent the lines for wrestling waiting to participate in a bout
     Queue<wrestlers> line1 = new LinkedList<>();
@@ -72,7 +72,7 @@ public class match{
         for(int i = 0; i < 12; i++){
             wrestlers wrestler1 = line1.remove();
             wrestlers wrestler2 = line2.remove();
-            wrestlers temp = bout.runBout(wrestler1, wrestler2);
+            wrestlers temp = runBout(wrestler1, wrestler2);
             winners.add(temp);
         }
         teams winningTeam = determineWinner(team1, team2, winners);

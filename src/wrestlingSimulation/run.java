@@ -1,18 +1,17 @@
 package wrestlingSimulation;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 //main class
 //run all the matches here
 //add time intervals between each match
 
-public class run {
+public class run{
     public static void main(String args[]){
 
         //making all the wrestlers
         init init = new init();
-        bout bout = new bout();
+        // bout bout = new bout();
         match match = new match();
         // scores_records record = new scores_records();
         init.initialize();
