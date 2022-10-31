@@ -59,8 +59,10 @@ public class match extends bout{
         }
         
         if(numTeam1 > numTeam2){
+            scores_records.addWin(team1.getTeamName());
             return team1;
         }
+        scores_records.addWin(team2.getTeamName());
         return team2;
     }
 

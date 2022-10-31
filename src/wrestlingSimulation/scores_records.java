@@ -24,6 +24,18 @@ public class scores_records{
         init.wrestlerRecords.replace(id, init.wrestlerRecords.get(id), temp);
     }
 
+    public static void addWin(String name){
+        int[] temp = init.teamRecords.get(name);
+        temp[0]+=1;
+        init.teamRecords.replace(name, init.teamRecords.get(name), temp);
+    }
+
+    public static void addLoss(String name){
+        int[] temp = init.teamRecords.get(name);
+        temp[1]+=1;
+        init.teamRecords.replace(name, init.teamRecords.get(name), temp);
+    }
+
     public static void printMap(){
         System.out.print(init.wrestlerRecords);
     }

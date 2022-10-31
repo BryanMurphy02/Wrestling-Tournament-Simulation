@@ -8,12 +8,11 @@ public class init {
 
 	// scores_records record = new scores_records();
 	bout bout = new bout();
-	scores_records record = new scores_records();
 
 	static ArrayList<wrestlers> wrestlerDatabase = new ArrayList<>();
 	static ArrayList<teams> teamsDatabase = new ArrayList<>();
 	static HashMap<Integer, int[]> wrestlerRecords = new HashMap<>();
-	static HashMap<Integer, int[]> teamRecords = new HashMap<>();
+	static HashMap<String, int[]> teamRecords = new HashMap<>();
 
 
 	//size of allNames is 1605
@@ -118,7 +117,7 @@ public class init {
 		//adding all wrestlers to the HashMaps for records
 		for(int i = 0; i < wrestlerDatabase.size(); i++){
 			int temp[] = {0,0};
-			record.addID(wrestlerDatabase.get(i).getId(), temp);
+			scores_records.addID(wrestlerDatabase.get(i).getId(), temp);
 		}
 		
 
@@ -194,6 +193,8 @@ public class init {
 			ArrayList<wrestlers> temp = new ArrayList<>(Arrays.asList(allTeams.get(i)));
 			teams newTeam = new teams(teamName, temp);
 			teamsDatabase.add(newTeam);
+			int[] tempInt = {0,0};
+			teamRecords.put(teamName, tempInt);
 		}
 
 	}

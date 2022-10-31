@@ -10,8 +10,8 @@ public class run{
     public static void main(String args[]){
 
         //making all the wrestlers
-        init init = new init();
         // bout bout = new bout();
+        init init = new init();
         match match = new match();
         // scores_records record = new scores_records();
         init.initialize();
@@ -22,34 +22,14 @@ public class run{
         ArrayList<teams> fourthRound = new ArrayList<>();
 
 
-        
-        // System.out.print(init.wrestlerDatabase);
-        // System.out.print(init.teamsDatabase);
-
-        // ArrayList<wrestlers> temp = new ArrayList<>();
-        // temp.add(init.wrestlerDatabase.get(0));
-        // temp.add(init.wrestlerDatabase.get(1));
-
-        // System.out.println(temp.get(0) + "\n\n");
-        // System.out.println(temp.get(1) + "\n\n");
-        // System.out.println("Winner of the bout: \n" + bout.runBout(temp.get(0), temp.get(1)));
-
-        // System.out.println("Before: \n\n\n\n" + init.teamsDatabase.get(0).getWrestlers());
-        // teams temp = init.teamsDatabase.get(0);
-        // ArrayList<wrestlers> temp2 = match.shuffleTeam(temp);
-        // System.out.println("After: \n\n\n\n" + temp2);
-
-        // System.out.println("Teams Database: " + init.teamsDatabase);
-
-
         //run 8 matches for western conference
         for(int i = 0; i < 8; i+=2){
-            secondRound.add(match.runMatch(init.teamsDatabase.get(i), init.teamsDatabase.get(i+1)));
+            secondRound.add(match.runMatch(wrestlingSimulation.init.teamsDatabase.get(i), wrestlingSimulation.init.teamsDatabase.get(i+1)));
         }
 
         //run 8 matches for the eastern conference
         for(int i = 8; i < 16; i+=2){
-            secondRound.add(match.runMatch(init.teamsDatabase.get(i), init.teamsDatabase.get(i+1)));
+            secondRound.add(match.runMatch(wrestlingSimulation.init.teamsDatabase.get(i), wrestlingSimulation.init.teamsDatabase.get(i+1)));
         }
 
         //run 4 matches for the western conference 2nd round
@@ -81,49 +61,8 @@ public class run{
         teams winner = match.runMatch(fourthRound.get(0), fourthRound.get(1));
 
 
-        // System.out.print("2nd Round teams: " + secondRound.size() + "\n\n\n");
-        // System.out.print("3rd Round teams: " + thirdRound.size() + "\n\n\n");
-        // System.out.print("4th Round teams: " + fourthRound.size() + "\n\n\n");
-        // System.out.print("Winner: \n\n" + winner + "\n\n\n");
         
 
-        // System.out.println("Size of stack1: " + init.stack1.size());
-        // System.out.println("Size of stack6: " + init.stack6.size());
-
-        // System.out.print(record.getRecord(init.records, winner.getWrestlers().get(1)));
-        // System.out.println(init.records.size());
-
-        // String temp69 = Arrays.toString(init.records.get(init.wrestlerDatabase.get(12)));
-        // System.out.println(temp69);
-        // System.out.println(init.records.get(init.wrestlerDatabase.get(0)));
-        // System.out.println("Size of HashMap: " + init.records.size());
-
-        // record.printMap(init.records);
-
-
-        // for(int i = 0; i < winner.getWrestlers().size(); i++){
-        //     wrestlers temp99 = winner.getWrestlers().get(i);
-        //     System.out.println(record.getRecord(init.wins, init.losses, temp99));
-        // }
-
-        // System.out.println("Wins HashMap size: " +init.wins.size());
-        // System.out.println("Losses HashMap size: " +init.losses.size());
-        // System.out.println("Size of idMap: " + init.idMap.size());
-
-        // System.out.println("Before update: " + Arrays.toString(init.records.get(init.wrestlerDatabase.get(0).getId())));
-
-
-        // record.updateRecord(init.records, init.wrestlerDatabase.get(0).getId(), 1);
-
-    
-        // System.out.println("After update: " + Arrays.toString(init.records.get(init.wrestlerDatabase.get(0).getId())));
-
-
-
-        // System.out.println(init.wrestlerDatabase);
-
-        for(int i = 0; i < winner.getWrestlers().size(); i++){
-            System.out.println(scores_records.getWrestlerRecord(winner.getWrestlers().get(i).getId()));
-        }
+        
     }
 }
