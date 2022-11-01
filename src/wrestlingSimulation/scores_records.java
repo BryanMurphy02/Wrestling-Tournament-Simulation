@@ -49,6 +49,11 @@ public class scores_records{
         }
         String name = temp.getName();
         int[] wrestlerRecord = init.wrestlerRecords.get(id);
-        return name + " has " + wrestlerRecord[0] + " wins and " + wrestlerRecord[1] + " losses.";
+        return name + " went " + wrestlerRecord[0] + "-" + wrestlerRecord[1];
+    }
+
+    public static String getTeamRecord(String name){
+        int[] temp = init.teamRecords.get(name);
+        return "Team " + name + " went " + temp[0] + "-" + temp[1];
     }
 }
