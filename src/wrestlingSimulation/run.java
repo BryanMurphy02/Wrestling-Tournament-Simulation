@@ -96,7 +96,87 @@ public class run{
     }
 
     public static void slowMethod(){
+        System.out.println("How many seconds bewteen each match would you like?");
+        int waitTime = scan.nextInt();
+        //run 8 matches for western conference
+        for(int i = 0; i < 8; i+=2){
+            String name1 = wrestlingSimulation.init.teamsDatabase.get(i).getTeamName();
+            String name2 = wrestlingSimulation.init.teamsDatabase.get(i+1).getTeamName();
+            System.out.println("Team " + name1 + " vs. Team " + name2);
+            teams tempTeam = match.runMatch(wrestlingSimulation.init.teamsDatabase.get(i), wrestlingSimulation.init.teamsDatabase.get(i+1));
+            secondRound.add(tempTeam);
+            wait(waitTime);
+            System.out.println("The winner is " + tempTeam.getTeamName() + "!\n");
+        }
 
+        //run 8 matches for the eastern conference
+        for(int i = 8; i < 16; i+=2){
+            String name1 = wrestlingSimulation.init.teamsDatabase.get(i).getTeamName();
+            String name2 = wrestlingSimulation.init.teamsDatabase.get(i+1).getTeamName();
+            System.out.println("Team " + name1 + " vs. Team " + name2);
+            teams tempTeam = match.runMatch(wrestlingSimulation.init.teamsDatabase.get(i), wrestlingSimulation.init.teamsDatabase.get(i+1));
+            secondRound.add(tempTeam);
+            wait(waitTime);
+            System.out.println("The winner is " + tempTeam.getTeamName() + "!\n");
+        }
+
+        //run 4 matches for the western conference 2nd round
+        ArrayList<teams> temp = new ArrayList<>();
+        for(int i = 0; i < 4; i++){
+            temp.add(secondRound.get(i));
+        }
+        for(int i = 0; i < 2; i++){
+            String name1 = wrestlingSimulation.init.teamsDatabase.get(i).getTeamName();
+            String name2 = wrestlingSimulation.init.teamsDatabase.get(i+1).getTeamName();
+            System.out.println("Team " + name1 + " vs. Team " + name2);
+            teams tempTeam = match.runMatch(temp.get(i), temp.get(i+1));
+            thirdRound.add(tempTeam);
+            wait(waitTime);
+            System.out.println("The winner is " + tempTeam.getTeamName() + "!\n");
+        }
+
+        temp.clear();
+
+        //run 4 matches for the eastern conference 2nd round
+        for(int i = 4; i < 8; i++){
+            temp.add(secondRound.get(i));
+        }
+        for(int i = 0; i < 2; i++){
+            String name1 = wrestlingSimulation.init.teamsDatabase.get(i).getTeamName();
+            String name2 = wrestlingSimulation.init.teamsDatabase.get(i+1).getTeamName();
+            System.out.println("Team " + name1 + " vs. Team " + name2);
+            teams tempTeam = match.runMatch(temp.get(i), temp.get(i+1));
+            thirdRound.add(tempTeam);
+            wait(waitTime);
+            System.out.println("The winner is " + tempTeam.getTeamName() + "!\n");
+        }
+
+        temp.clear();
+
+        //run 2 matches for the semi finals
+        String name1 = thirdRound.get(0).getTeamName();
+        String name2 = thirdRound.get(1).getTeamName();
+        System.out.println("Team " + name1 + " vs. Team " + name2);
+        teams tempTeam = match.runMatch(thirdRound.get(0), thirdRound.get(1));
+        fourthRound.add(tempTeam);
+        wait(waitTime);
+        System.out.println("The winner is " + tempTeam.getTeamName() + "!\n");
+
+        name1 = thirdRound.get(2).getTeamName();
+        name2 = thirdRound.get(3).getTeamName();
+        System.out.println("Team " + name1 + " vs. Team " + name2);
+        tempTeam = match.runMatch(thirdRound.get(2), thirdRound.get(3));
+        fourthRound.add(tempTeam);
+        wait(waitTime);
+        System.out.println("The winner is " + tempTeam.getTeamName() + "!\n");
+
+        //run the final match
+        name1 = fourthRound.get(0).getTeamName();
+        name2 = fourthRound.get(1).getTeamName();
+        System.out.println("The final match is between: \n" + name1 + " and " + name2);
+        teams winner = match.runMatch(fourthRound.get(0), fourthRound.get(1));
+        wait(waitTime);
+        System.out.println("The winner is team " + winner.getTeamName());
     }
 
     public static boolean checkInput(String input, String[] keys){
