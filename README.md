@@ -5,6 +5,8 @@ Simulation of 192 wrestlers competing in a tournament. Each wrestler waits in a 
 # 
 ## Running the Simulation
 When running the simulation, the user will have two options. The user can either choose the fast method or the slow method. The fast method will run through the simulation immediately and print the winning team of the tournament. The slow method will ask the user how many seconds they want to have as a buffer between each match. This means that the results of each match will be shown to the user, rather than only printing the winner of the entire tournament.
+
+When the simulation is done running and there is a winner, the user can then check the records of the winning team and each individual wrestler on the team. Another option will be re-ruuning the entire simulation from the start.
 # 
 ## Purpose
 This project displays object oriented programming and data structures. 
