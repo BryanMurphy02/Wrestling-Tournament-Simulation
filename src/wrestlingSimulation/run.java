@@ -29,6 +29,7 @@ public class run{
         }
     }
 
+    //method that will run the tournament instantly
     public static void fastMethod(){
         //run 8 matches for western conference
         for(int i = 0; i < 8; i+=2){
@@ -68,37 +69,54 @@ public class run{
         //run the final match
         teams winner = match.runMatch(fourthRound.get(0), fourthRound.get(1));
 
-        System.out.println("\nThe winner of the tournament is team " + winner.getTeamName() + "!\nWould you like to print the records of the wrestlers on team " + winner.getTeamName() + "?(yes or no)");
-        String input = scan.nextLine();
-        String[] keysYes = {"yes", "Yes"};
-        String[] keysNo = {"no", "No"};
-        String[] yesNo = {"Yes", "yes", "no", "No"};
-        if(!checkInput(input, yesNo)){
-            System.out.println("This is an incorrent input. Please type \"fast\" or \"slow\"");
-            String userInput = scan.nextLine();
-            while(checkInput(userInput, yesNo) == false){
-                System.out.println("This is an incorrent input. Please type \"fast\" or \"slow\"");
-                userInput = scan.nextLine();
-            }
-            input = userInput;
-        }
+        // System.out.println("\nThe winner of the tournament is team " + winner.getTeamName() + "!\nWould you like to print the records of the wrestlers on team " + winner.getTeamName() + "?(yes or no)");
+        // String input = scan.nextLine();
+        // String[] keysYes = {"yes", "Yes"};
+        // String[] keysNo = {"no", "No"};
+        // String[] yesNo = {"Yes", "yes", "no", "No"};
+        // if(!checkInput(input, yesNo)){
+        //     System.out.println("This is an incorrent input. Please type \"fast\" or \"slow\"");
+        //     String userInput = scan.nextLine();
+        //     while(checkInput(userInput, yesNo) == false){
+        //         System.out.println("This is an incorrent input. Please type \"fast\" or \"slow\"");
+        //         userInput = scan.nextLine();
+        //     }
+        //     input = userInput;
+        // }
 
 
-        if(checkInput(input, keysYes)){
-            System.out.println("\n" + scores_records.getTeamRecord(winner.getTeamName()));
-            for(int i = 0; i < winner.getWrestlers().size(); i++){
-                System.out.println(scores_records.getWrestlerRecord(winner.getWrestlers().get(i).getId()));
-            }
-        }
-        else if(checkInput(input, keysNo)){
-            System.out.println("\nThanks for coming to the tournament!");
-        }
+        // if(checkInput(input, keysYes)){
+        //     System.out.println("\n" + scores_records.getTeamRecord(winner.getTeamName()));
+        //     for(int i = 0; i < winner.getWrestlers().size(); i++){
+        //         System.out.println(scores_records.getWrestlerRecord(winner.getWrestlers().get(i).getId()));
+        //     }
+        // }
+        // else if(checkInput(input, keysNo)){
+        //     playAgain();
+        // }
+        seeRecords(winner);
     }
 
+    //method that will run the tournament with a waiting time in between every match
     public static void slowMethod(){
         System.out.println("How many seconds bewteen each match would you like?");
-        int waitTime = scan.nextInt();
+        int waitTime = (int)scan.nextDouble();
+        if(waitTime == 1000){
+            waitTime = 0;
+        }
+        else{
+            if((waitTime >= 1) == false){
+                System.out.println("This is an incorrent input. Please type a whole number larger than zero");
+                waitTime = (int)scan.nextDouble();
+                while((waitTime >= 1) == false){
+                    System.out.println("This is an incorrent input. Please type a whole number larger than zero");
+                    waitTime = (int)scan.nextDouble();
+                }
+            }
+        }
         //run 8 matches for western conference
+        System.out.println("Now commencing the 8 matches in the Western conference\n");
+        wait(waitTime);
         for(int i = 0; i < 8; i+=2){
             String name1 = wrestlingSimulation.init.teamsDatabase.get(i).getTeamName();
             String name2 = wrestlingSimulation.init.teamsDatabase.get(i+1).getTeamName();
@@ -110,6 +128,8 @@ public class run{
         }
 
         //run 8 matches for the eastern conference
+        System.out.println("Now commencing the 8 matches in the Eastern conference\n");
+        wait(waitTime);
         for(int i = 8; i < 16; i+=2){
             String name1 = wrestlingSimulation.init.teamsDatabase.get(i).getTeamName();
             String name2 = wrestlingSimulation.init.teamsDatabase.get(i+1).getTeamName();
@@ -121,6 +141,8 @@ public class run{
         }
 
         //run 4 matches for the western conference 2nd round
+        System.out.println("Now commencing the 4 matches in the second round of the Western Conference\n");
+        wait(waitTime);
         ArrayList<teams> temp = new ArrayList<>();
         for(int i = 0; i < 4; i++){
             temp.add(secondRound.get(i));
@@ -138,6 +160,8 @@ public class run{
         temp.clear();
 
         //run 4 matches for the eastern conference 2nd round
+        System.out.println("Now commencing the 4 matches in the second round of the Eastern Conference\n");
+        wait(waitTime);
         for(int i = 4; i < 8; i++){
             temp.add(secondRound.get(i));
         }
@@ -154,6 +178,8 @@ public class run{
         temp.clear();
 
         //run 2 matches for the semi finals
+        System.out.println("Now commencing the 2 matches in Semi-Finals\n");
+        wait(waitTime);
         String name1 = thirdRound.get(0).getTeamName();
         String name2 = thirdRound.get(1).getTeamName();
         System.out.println("Team " + name1 + " vs. Team " + name2);
@@ -171,12 +197,15 @@ public class run{
         System.out.println("The winner is " + tempTeam.getTeamName() + "!\n");
 
         //run the final match
+        System.out.println("Now commencing the Final match of the tournament. Whichever teams wins will be crowned victorious!\n");
+        wait(waitTime);
         name1 = fourthRound.get(0).getTeamName();
         name2 = fourthRound.get(1).getTeamName();
         System.out.println("The final match is between: \n" + name1 + " and " + name2);
         teams winner = match.runMatch(fourthRound.get(0), fourthRound.get(1));
         wait(waitTime);
-        System.out.println("The winner is team " + winner.getTeamName());
+        System.out.println("The winner is: \n\n\n     " + winner.getTeamName() + "     \n\n");
+        seeRecords(winner);
     }
 
     public static boolean checkInput(String input, String[] keys){
@@ -186,6 +215,54 @@ public class run{
             }
         }
         return false;
+    }
+
+    public static void seeRecords(teams winner){
+        System.out.println("Would you like to see the records of the wrestlers?");
+        String[] keysYes = {"yes", "Yes"};
+        String[] keysNo = {"no", "No"};
+        String[] allInputs = {"Yes", "yes", "No", "no"};
+        String newUserInput = scan.nextLine();
+        while(checkInput(newUserInput, allInputs) == false){
+            newUserInput = scan.nextLine();
+            if(checkInput(newUserInput, allInputs)){
+                break;
+            }
+            else{
+                System.out.println("This is not an accepable answer. Please type \"yes\" or \"no\"");
+            }
+        }
+        
+
+
+        if(checkInput(newUserInput, keysYes)){
+            System.out.println("\n" + scores_records.getTeamRecord(winner.getTeamName()));
+            for(int i = 0; i < winner.getWrestlers().size(); i++){
+                System.out.println(scores_records.getWrestlerRecord(winner.getWrestlers().get(i).getId()));
+            }
+            playAgain();
+        }
+        else if(checkInput(newUserInput, keysNo)){
+            System.out.println("\nThanks for coming to the tournament!");
+            playAgain();
+        }
+    }
+
+    public static void playAgain(){
+        System.out.println("Would you like the simulation to run again?");
+        String[] keys = {"Yes", "yes", "No", "no"};
+        String[] yesKey ={"Yes", "yes"};
+        String input = scan.nextLine();
+        while(!checkInput(input, keys)){
+            System.out.println("This is an incorrent input. Please type \"yes\" or \"no\"");
+            input = scan.nextLine();
+        }
+        if(checkInput(input, yesKey)){
+            runMain();
+        }
+        else{
+            System.out.println("\nThanks for coming to the tournament!");
+        }
     }
 
     public static void runMain(){
