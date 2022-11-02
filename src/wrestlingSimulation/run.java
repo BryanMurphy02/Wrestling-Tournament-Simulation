@@ -69,31 +69,7 @@ public class run{
         //run the final match
         teams winner = match.runMatch(fourthRound.get(0), fourthRound.get(1));
 
-        // System.out.println("\nThe winner of the tournament is team " + winner.getTeamName() + "!\nWould you like to print the records of the wrestlers on team " + winner.getTeamName() + "?(yes or no)");
-        // String input = scan.nextLine();
-        // String[] keysYes = {"yes", "Yes"};
-        // String[] keysNo = {"no", "No"};
-        // String[] yesNo = {"Yes", "yes", "no", "No"};
-        // if(!checkInput(input, yesNo)){
-        //     System.out.println("This is an incorrent input. Please type \"fast\" or \"slow\"");
-        //     String userInput = scan.nextLine();
-        //     while(checkInput(userInput, yesNo) == false){
-        //         System.out.println("This is an incorrent input. Please type \"fast\" or \"slow\"");
-        //         userInput = scan.nextLine();
-        //     }
-        //     input = userInput;
-        // }
-
-
-        // if(checkInput(input, keysYes)){
-        //     System.out.println("\n" + scores_records.getTeamRecord(winner.getTeamName()));
-        //     for(int i = 0; i < winner.getWrestlers().size(); i++){
-        //         System.out.println(scores_records.getWrestlerRecord(winner.getWrestlers().get(i).getId()));
-        //     }
-        // }
-        // else if(checkInput(input, keysNo)){
-        //     playAgain();
-        // }
+        System.out.println("\nThe winner of the tournament is team " + winner.getTeamName());
         seeRecords(winner);
     }
 
