@@ -1,8 +1,5 @@
 package wrestlingSimulation;
 import java.util.ArrayList;
-//12 wresters on the team
-// Team record(wins and losses)
-// Team Schedule
 
 
 public class teams{

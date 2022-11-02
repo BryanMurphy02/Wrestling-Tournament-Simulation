@@ -20,6 +20,8 @@ public class run{
     static ArrayList<teams> thirdRound = new ArrayList<>();
     static ArrayList<teams> fourthRound = new ArrayList<>();
 
+
+    //method allows for the program to pause for the passed in amount of time
     public static void wait(int seconds){
         try {
             TimeUnit.SECONDS.sleep(seconds);
@@ -184,6 +186,8 @@ public class run{
         seeRecords(winner);
     }
 
+    //This method checks the inputted string against the inputted array
+    //Returns true if a match was found and false if not
     public static boolean checkInput(String input, String[] keys){
         for(int i = 0; i < keys.length; i++){
             if(keys[i].equals(input)){
@@ -193,6 +197,8 @@ public class run{
         return false;
     }
 
+    //This method will ask the user if they want to see the records for the winning team
+    //If the user picks yes, the record of the team and every wrestler on the team will be printed
     public static void seeRecords(teams winner){
         System.out.println("Would you like to see the records of the wrestlers?");
         String[] keysYes = {"yes", "Yes"};
@@ -224,6 +230,7 @@ public class run{
         }
     }
 
+    //This method will ask the user if they want to run the simulation again
     public static void playAgain(){
         System.out.println("Would you like the simulation to run again?");
         String[] keys = {"Yes", "yes", "No", "no"};
@@ -241,6 +248,7 @@ public class run{
         }
     }
 
+    //This is the main method which will run the entire simulation
     public static void runMain(){
         //initializing all the objects
         init.initialize();
@@ -284,6 +292,8 @@ public class run{
             }
         }
     }
+
+    //main method
     public static void main(String args[]){
 
         runMain();

@@ -6,8 +6,6 @@ import java.util.Random;
 
 public class match extends bout{
 
-    //class declarations
-    // bout bout = new bout();
 
     //queues that represent the lines for wrestling waiting to participate in a bout
     Queue<wrestlers> line1 = new LinkedList<>();
