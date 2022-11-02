@@ -14,8 +14,8 @@ When the simulation is done running and there is a winner, the user can then che
 This project displays object oriented programming and data structures. 
  
 Objects used:
-- wrestler
-- teams
+- Wrestler
+- Teams
  
  
 Data Structures used:
