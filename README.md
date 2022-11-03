@@ -1,7 +1,7 @@
 # Wrestling Tournament Simulation
 ##### Created By: Bryan Murphy
 ## Description
-Simulation of 192 wrestlers competing in a tournament. Each wrestler waits in a line until they reach the front where they then place thier names in 1 of 6 piles. These piles are then broken up into 16 different teams. Each team then competes in a tournament and the last team standing wins. 
+Simulation of 192 wrestlers competing in a tournament. Each wrestler waits in a line until they reach the front where they then place thier names in 1 of 6 piles. These piles are then broken up into 16 different teams, of 12 wrestlers. Each team then competes in a tournament and the last team standing wins. 
 # 
 ## Running the Simulation
 The simulation all gets ran from the run file.
