@@ -222,31 +222,12 @@ public class run{
             for(int i = 0; i < winner.getWrestlers().size(); i++){
                 System.out.println(scores_records.getWrestlerRecord(winner.getWrestlers().get(i).getId()));
             }
-            playAgain();
         }
         else if(checkInput(newUserInput, keysNo)){
             System.out.println("\nThanks for coming to the tournament!");
-            playAgain();
         }
     }
 
-    //This method will ask the user if they want to run the simulation again
-    public static void playAgain(){
-        System.out.println("Would you like the simulation to run again?");
-        String[] keys = {"Yes", "yes", "No", "no"};
-        String[] yesKey ={"Yes", "yes"};
-        String input = scan.nextLine();
-        while(!checkInput(input, keys)){
-            System.out.println("This is an incorrent input. Please type \"yes\" or \"no\"");
-            input = scan.nextLine();
-        }
-        if(checkInput(input, yesKey)){
-            runMain();
-        }
-        else{
-            System.out.println("\nThanks for coming to the tournament!");
-        }
-    }
 
     //This is the main method which will run the entire simulation
     public static void runMain(){
